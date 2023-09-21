@@ -1,0 +1,10 @@
+name: delly filter
+description: Delly structural variant calling pipeline; filter tool
+input:
+  - bcf file
+output:
+  - sv bcf file
+notes: |
+  * We use the germline calling pipeline from delly; Tools are implemented with this in mind.
+authors:
+  - Fabian Brand

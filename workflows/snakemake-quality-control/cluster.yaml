@@ -1,0 +1,15 @@
+__default__:
+  account: igsb
+  gres: "localtmp:50G"
+  nodes: 1
+  partition: batch
+  output: "logs/jobs/{jobid}.out"
+  error: "logs/jobs/{jobid}.err"
+
+samtools_stats:
+  runtime: 720
+
+verifybamid:
+  mem_mb: 32000
+  runtime: 720 # 53hr
+  gres: "localtmp:400G"

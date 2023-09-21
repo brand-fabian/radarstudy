@@ -1,0 +1,4 @@
+name: bcftools merge
+description: Merge all input vcf/bcf files to target output
+authors:
+  - Fabian Brand

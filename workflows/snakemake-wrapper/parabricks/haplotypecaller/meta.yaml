@@ -1,0 +1,12 @@
+name: NVIDIA Parabricks haplotypecaller
+description: Wrapper haplotypecaller tool of the NVIDIA parabricks toolkit
+input:
+  - bam + index
+output:
+  - gvcf or vcf
+notes: |
+  * This tool can be used to call variants on a given bam file.
+  * Make sure you have a license available for the software
+  * Depends on the module system of our installation to provide software deps.
+authors:
+  - Fabian Brand

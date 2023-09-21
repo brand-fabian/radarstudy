@@ -1,0 +1,13 @@
+name: vep
+description: Wrapper for Variant Effect Predictor
+input:
+  - vcf file
+output:
+  - annotated vcf file
+notes: |
+  * Annotates an vcf file with given databases.
+  * If no database cache is provided, the tool will download a database into
+    temporary directories.
+  * Defaults to GRCh37 assembly if not set.
+authors:
+  - Fabian Brand

@@ -1,0 +1,13 @@
+name: NVIDIA Parabricks fq2bam
+description: Wrapper fq2bam tool of the NVIDIA parabricks toolkit
+input:
+  - A set of paired-end fastqs
+output:
+  - bam
+  - bai
+notes: |
+  * This tool can be used to perform BWA-like alignment using CUDA devices.
+  * Make sure you have a license available for the software
+  * Depends on the module system of our installation to provide software deps.
+authors:
+  - Fabian Brand

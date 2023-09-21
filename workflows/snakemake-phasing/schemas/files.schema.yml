@@ -1,0 +1,12 @@
+$schema: "http://json-schema.org/draft-06/schema#"
+
+description: List of input files
+
+properties:
+  sample_id:
+    type: string
+  type:
+    type: string
+    enum: [ 'raw-reads', 'alignment', 'variants' ]
+  path:
+    type: string

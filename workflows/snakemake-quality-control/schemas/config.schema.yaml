@@ -1,0 +1,60 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+description: snakemake configuration file reference
+
+type: object
+
+properties:
+  project:
+    type: string
+  input-dirs:
+    type: array
+    items:
+      type: string
+  search-patterns:
+    type: array
+    items:
+      type: string
+  file-endings:
+    type: array
+    items:
+      type: string
+  ref:
+    type: object
+    properties:
+      genome:
+        type: string
+      1kg-variants:
+        type: string
+      refseq:
+        type: string
+        description: Bed file containing refseq exon regions
+    required:
+      - genome
+      - 1kg-variants
+      - refseq
+  mosdepth:
+    type: object
+    properties:
+      thresholds: 
+        type: string
+        description: Comma separated list of coverage thresholds
+      quantize:
+        type: string
+        description: Colon separated list of quantization groups
+  pedigree:
+    type: string
+  dragen_qc:
+    type: boolean
+    description: Check for dragen csv metric files
+  cohort_vcf:
+    type: string
+    description: Path to a cohort vcf file
+  default_metrics_source:
+    type: string
+    description: Tool to use for creating the WGS metrics files.
+required:
+  - input-dirs
+  - project
+  - mosdepth
+  - ref

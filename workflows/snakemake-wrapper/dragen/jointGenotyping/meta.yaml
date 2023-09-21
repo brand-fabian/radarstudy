@@ -1,0 +1,4 @@
+name: jointGenotyping
+description: Snakemake wrapper for the dragen joint genotyping workflow.
+authors:
+  - Fabian Brand

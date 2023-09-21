@@ -1,0 +1,4 @@
+name: bcftools isec
+description: Intersect two vcf/bcf filess
+authors:
+  - Fabian Brand

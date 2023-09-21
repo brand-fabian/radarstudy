@@ -1,0 +1,11 @@
+name: snpsift extractFields
+description: Wrapper for snpsift extractFields
+input:
+  - vcf file
+  - Fields to extract
+output:
+  - Table file
+notes: |
+  * Extract the given fields from a vcf into a text table.
+authors:
+  - Fabian Brand

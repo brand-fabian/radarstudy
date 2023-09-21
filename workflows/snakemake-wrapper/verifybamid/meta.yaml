@@ -1,0 +1,9 @@
+name: verifybamid
+description: Wrapper for verify bam id.
+authors:
+  - Fabian Brand
+input:
+  - a vcf (f.e. 1kg)
+  - a bam file
+output:
+  - metrics files [.selfRG,.selfSM,.bestRG,.bestSM,.depthRG,.depthSM]

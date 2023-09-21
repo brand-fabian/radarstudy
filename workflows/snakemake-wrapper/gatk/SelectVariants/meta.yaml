@@ -1,0 +1,11 @@
+name: gatk SelectVariants
+description: Wrapper for gatk SelectVariants.
+authors:
+  - Fabian Brand
+input:
+  - a cohort vcf input
+  - a reference genome
+output:
+  - a vcf file
+  - a vcf index file
+  - a vcf md5 hash

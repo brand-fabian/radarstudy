@@ -1,0 +1,8 @@
+samples: 'samplesheets/resequenced.tsv'
+files: 'samplesheets/resequenced-files.tsv'
+license_file: 'secrets/license.txt'
+reference_dir: '/ephemeral/reference'
+s3:
+  input: 's3://radarstudy-raw-data'
+  output: 's3://radarstudy-dragen'
+self_normalize: true

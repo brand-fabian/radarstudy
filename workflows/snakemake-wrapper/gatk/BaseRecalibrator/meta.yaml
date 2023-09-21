@@ -1,0 +1,9 @@
+name: gatk BaseRecalibrator
+description: Wrapper for gatk base recalibrator workflow.
+authors:
+  - Fabian Brand
+input:
+  - bam file
+  - bai file
+output:
+  - bqsr adjusted bam file

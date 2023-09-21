@@ -1,0 +1,4 @@
+name: bcftools norm
+description: Normalize input vcf file.
+authors:
+  - Fabian Brand

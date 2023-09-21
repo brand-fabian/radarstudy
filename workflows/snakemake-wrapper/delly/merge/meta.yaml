@@ -1,0 +1,10 @@
+name: delly merge
+description: Delly structural variant calling pipeline; merge tool
+input:
+  - list of bcf files (see call)
+output:
+  - sv bcf file
+notes: |
+  * We use the germline calling pipeline from delly; Tools are implemented with this in mind.
+authors:
+  - Fabian Brand

@@ -1,0 +1,9 @@
+name: picard PositionBasedDownsampleSam
+description: PositionBasedDownsampleSam applies downsampling to an input bam.
+authors:
+  - Fabian Brand
+input:
+  - bam file
+  - read fraction to keep 
+output:
+  - bam file

@@ -1,0 +1,10 @@
+name: picard CollectHsMetrics
+description: Wrapper for picards CollectHsMetrics.
+authors:
+  - Fabian Brand
+input:
+  - bam file
+  - bai file
+output:
+  - hs metrics file
+  - optional per base and per target metrics

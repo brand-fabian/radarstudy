@@ -1,0 +1,13 @@
+include: "rules/meta.smk"
+
+rule all:
+  input:
+    bam=expand("output/{family_id}/{family_id}.bam", family_id=family_ids),
+    ped=expand("output/{family_id}/{family_id}.ped", family_id=family_ids),
+    whatshap=expand("output/{family_id}/{family_id}.phased.vcf.gz", family_id=family_ids),
+    unfazed=expand("output/{family_id}/{family_id}.unfazed.vcf.gz", family_id=family_ids)
+
+include: "rules/subset.smk"
+include: "rules/create-pedigree.smk"
+include: "rules/whatshap.smk"
+include: "rules/unfazed.smk"

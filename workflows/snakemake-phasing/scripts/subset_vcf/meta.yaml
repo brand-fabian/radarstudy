@@ -1,0 +1,13 @@
+name: subset_vcf
+description: |
+  From a generic vcf, we extract the de novo mutation sites as given
+  in the input sites table. This should match the sites provided to
+  the subset bam operation as well.
+authors:
+  - Fabian Brand
+input:
+  - An input vcf file
+  - A table containing desired sites
+  - A pedigree file (.fam)
+output:
+  - A vcf file cropped to the families and sites given.

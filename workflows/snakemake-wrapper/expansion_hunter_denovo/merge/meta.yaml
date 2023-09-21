@@ -1,0 +1,10 @@
+name: ExpansionHunterDeNovo Merge
+description: Illumina ExpansionHunter De Novo - Merge step
+input:
+  - bam file
+  - genome reference
+  - case and control sample status
+output:
+  - Multisample STR profile for the given cohort
+authors:
+  - Fabian Brand

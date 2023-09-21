@@ -1,0 +1,8 @@
+name: samtools index
+description: Wrapper for the various samtools index command.
+input:
+  - sam, bam or cram file
+output:
+  - Index (.bai / .csi) for the alignment file.
+authors:
+  - Fabian Brand

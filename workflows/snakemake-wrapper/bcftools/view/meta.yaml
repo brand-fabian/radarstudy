@@ -1,0 +1,4 @@
+name: bcftools view
+description: View and filter vcf/bcf file
+authors:
+  - Fabian Brand

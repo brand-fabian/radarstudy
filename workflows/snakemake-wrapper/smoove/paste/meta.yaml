@@ -1,0 +1,11 @@
+name: smoove (lumpy) paste
+description: smoove simplifies and speeds calling and genotyping SVs for short reads; paste tool
+input:
+  - list of vcf.gz files from genotyping
+output:
+  - merged cohort vcf.gz
+notes: |
+  * We implement the population calling approach, see related tools aswell.
+  * This wrapper relies on the xcat-specific module system (otherwise change environment.yaml)
+authors:
+  - Fabian Brand

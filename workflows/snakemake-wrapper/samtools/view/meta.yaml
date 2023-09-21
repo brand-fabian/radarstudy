@@ -1,0 +1,9 @@
+name: samtools view
+description: Wrapper for the various samtools view commands
+input:
+  - sam, bam or cram file
+output:
+  - bam
+  - bai
+authors:
+  - Fabian Brand

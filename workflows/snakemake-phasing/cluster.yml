@@ -1,0 +1,12 @@
+__default__:
+  account: igsb
+  gres: "localtmp:10G"
+  nodes: 1
+  partition: batch
+  output: "logs/slurm/{name}.{jobid}.out"
+  error: "logs/slurm/{name}.{jobid}.err"
+
+unfazed:
+  partition: batch
+  runtime: 120
+  mem_mb: 16000

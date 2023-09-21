@@ -1,0 +1,10 @@
+name: gatk3 ReadBackedPhasing
+description: Wrapper for gatk3 ReadBackedPhasing.
+authors:
+  - Fabian Brand
+input:
+  - vcf file
+  - reference build
+  - pedigree file
+output:
+  - gvcf file

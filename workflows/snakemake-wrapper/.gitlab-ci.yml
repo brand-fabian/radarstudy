@@ -1,0 +1,16 @@
+image:
+  name: continuumio/miniconda3
+
+stages:
+  - test
+
+before_script:
+  - conda config --add channels defaults
+  - conda config --add channels bioconda
+  - conda config --add channels conda-forge
+  - conda install -y snakemake pytest
+
+test:
+  stage: test
+  script:
+    - pytest

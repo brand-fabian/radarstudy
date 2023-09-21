@@ -1,0 +1,23 @@
+__default__:
+  account: igsb
+  gres: "localtmp:50G"
+  nodes: 1
+  partition: batch
+  output: "logs/jobs/{name}.{jobid}.out"
+  error: "logs/jobs/{name}.{jobid}.err"
+
+fq2bam:
+  gres: "localtmp:200G,gpu:2"
+  licenses: "parabricks@nvlm.meb.uni-bonn.de:2"
+
+haplotypecaller:
+  gres: "localtmp:200G,gpu:2"
+  licenses: "parabricks@nvlm.meb.uni-bonn.de:2"
+
+multiple_metrics:
+  gres: "localtmp:100G,gpu:1"
+  licenses: "parabricks@nvlm.meb.uni-bonn.de:1"
+
+wgs_metrics:
+  gres: "localtmp:100G,gpu:1"
+  licenses: "parabricks@nvlm.meb.uni-bonn.de:1"

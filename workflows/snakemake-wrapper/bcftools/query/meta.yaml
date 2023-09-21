@@ -1,0 +1,4 @@
+name: bcftools query
+description: Query an input vcf file.
+authors:
+  - Fabian Brand

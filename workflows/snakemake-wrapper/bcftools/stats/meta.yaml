@@ -1,0 +1,4 @@
+name: bcftools stats
+description: Get vcf/bcf stats
+authors:
+  - Fabian Brand

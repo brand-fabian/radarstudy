@@ -1,0 +1,8 @@
+name: picard SamToFastq
+description: 'SamToFastq: Converts a SAM or BAM file to FASTQ.'
+authors:
+  - Fabian Brand
+input:
+  - bam file
+output:
+  - single or paired end fastq files

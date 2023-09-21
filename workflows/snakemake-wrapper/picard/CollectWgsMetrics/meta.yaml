@@ -1,0 +1,9 @@
+name: picard CollectWgsMetrics
+description: Wrapper for picards CollectWgsMetrics.
+authors:
+  - Fabian Brand
+input:
+  - bam file
+  - bai file
+output:
+  - metrics file

@@ -1,0 +1,10 @@
+name: snpsift filter wrapper
+description: Wrapper for snpsift filter
+input:
+  - vcf file
+output:
+  - filtered vcf file
+notes: |
+  * Filter a given vcf file based on a string syntax.
+authors:
+  - Fabian Brand

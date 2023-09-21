@@ -1,0 +1,10 @@
+name: gatk Haplotype Caller
+description: Wrapper for gatk haplotype caller.
+authors:
+  - Fabian Brand
+input:
+  - bam file
+  - bai file
+  - interval list
+output:
+  - gvcf file

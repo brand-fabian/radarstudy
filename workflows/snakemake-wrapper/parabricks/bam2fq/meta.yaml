@@ -1,0 +1,11 @@
+name: NVIDIA Parabricks bam2fq
+description: Wrapper bam2fq tool of the NVIDIA parabricks toolkit
+input:
+  - bam
+  - bai
+output:
+  - _{1,2}.fastq.gz
+notes: |
+  * This tool should be used as a replacement of gatk SamToFastq
+authors:
+  - Fabian Brand

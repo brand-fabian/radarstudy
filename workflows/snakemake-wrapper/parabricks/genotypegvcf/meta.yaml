@@ -1,0 +1,13 @@
+name: NVIDIA Parabricks genotypegvcf
+description: Wrapper genotypegvcf tool of the NVIDIA parabricks toolkit
+input:
+  - haplotypecaller gvcf
+output:
+  - vcf
+notes: |
+  * Make sure you have a license available for the software
+  * Depends on the module system of our installation to provide software deps.
+  * We only support genotyping gvcfs from parabricks haplotype caller.
+  * Currently, parabricks does not support arbitrary combinegvcfs steps.
+authors:
+  - Fabian Brand

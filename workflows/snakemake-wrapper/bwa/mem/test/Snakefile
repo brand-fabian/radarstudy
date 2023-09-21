@@ -1,0 +1,13 @@
+rule align:
+    input:
+        reads=[
+            "fastq_1.fq.gz",
+            "fastq_2.fq.gz",
+        ]
+    output:
+        bam="output.bam",
+        bai="output.bai",
+        md5="output.bam.md5",
+    params:
+        index="reference.fasta",
+    wrapper: "file:.."

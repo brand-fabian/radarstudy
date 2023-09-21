@@ -1,0 +1,9 @@
+name: parabricks CollectMultipleMetrics
+description: Parabricks accelerated version of picard CollectMultipleMetrics
+authors:
+  - Fabian Brand
+input:
+  - bam file
+  - bai file
+output:
+  - metrics files

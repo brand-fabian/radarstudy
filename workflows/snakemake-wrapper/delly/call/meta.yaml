@@ -1,0 +1,11 @@
+name: delly call
+description: Delly structural variant calling pipeline; call tool
+input:
+  - bam file
+  - bai file
+output:
+  - sv bcf file
+notes: |
+  * We use the germline calling pipeline from delly; Tools are implemented with this in mind.
+authors:
+  - Fabian Brand

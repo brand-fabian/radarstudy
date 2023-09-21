@@ -1,0 +1,8 @@
+channels:
+  - https://ngshub.meb.uni-bonn.de/channel
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - ngs-cli >=0.0.4
+  - awscli >=1.8

@@ -1,0 +1,4 @@
+name: filter-denovo
+description: Apply de-novo soft-filters based on Wong et al. and Besenbacher et al. to find (MS)DNM.
+authors:
+  - Fabian Brand

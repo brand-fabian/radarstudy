@@ -1,0 +1,8 @@
+name: multiqc
+description: Wrapper for multiqc.
+authors:
+  - Fabian Brand
+input:
+  - an array with files to aggregate into report
+output:
+  - report.html

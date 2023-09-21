@@ -1,0 +1,21 @@
+project: radarstudy-phasing
+files: /ceph01/homedirs/brand/Projects/radarstudy/TRIO-CRU/samplesheets/trio-cru.files.tsv
+cohort-vcf:
+  radar: /home/brand/Projects/radarstudy/glnexus/output/radar.grch37.final.vcf.bgz
+  inova: /home/brand/Projects/radarstudy/glnexus/output/inova.genome.bcf
+  cru: /home/brand/Projects/radarstudy/TRIO-CRU/output/trio-cru.vcf.bgz
+pedigree: /ceph01/homedirs/brand/Projects/radarstudy/msdn_call/data/all.cru.fam
+sites: /ceph01/homedirs/brand/Projects/radarstudy/msdn_call/output/trio-cru.ac1/default.dnm.tsv
+search-dirs:
+  - /ceph01/projects/radarstudie
+  - /ceph01/homedirs/brand/data/Cores/Bioinformatik/Inova_Krawitz
+  - /ceph01/homedirs/brand/data/pb_home/files/gluster/gluster01/share/radarstudie
+ref:
+  grch37:
+    genome: /home/brand/scratch/library/human_g1k_v37_decoy.fasta
+  grch38:
+    genome: /home/brand/scratch/library_hg38/Homo_sapiens_assembly38.fasta
+id-mapping:
+  radar: /ceph01/homedirs/brand/Projects/msdns_inova/usi2rid.list
+  inova: /ceph01/homedirs/brand/Projects/msdns_inova/data/inova_id_match.csv
+flanking-region: 15000

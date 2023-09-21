@@ -1,0 +1,11 @@
+name: ngs-cli upload
+description: Wrapper for uploading result files to the ngs-cli platform.
+authors:
+  - Fabian Brand
+input:
+  - any file
+output:
+  - None
+notes: |
+  * Uploads all input files to the ngs-platform using ngs-cli wrapper.
+  * Requires at least one parameter (sample) to correctly upload.

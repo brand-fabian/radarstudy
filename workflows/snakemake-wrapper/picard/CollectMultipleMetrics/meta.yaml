@@ -1,0 +1,9 @@
+name: picard CollectMultipleMetrics
+description: Wrapper for picards CollectMultipleMetrics.
+authors:
+  - Fabian Brand
+input:
+  - bam file
+  - bai file
+output:
+  - metrics file

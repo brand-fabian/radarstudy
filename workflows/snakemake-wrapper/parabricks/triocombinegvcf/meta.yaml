@@ -1,0 +1,12 @@
+name: NVIDIA Parabricks triocombinegvcf
+description: Wrapper triocombinegvcf tool of the NVIDIA parabricks toolkit
+input:
+  - haplotypecaller gvcf for parents and child
+output:
+  - combined gvcf
+notes: |
+  * Make sure you have a license available for the software
+  * Depends on the module system of our installation to provide software deps.
+  * We only support genotyping gvcfs from parabricks haplotype caller.
+authors:
+  - Fabian Brand

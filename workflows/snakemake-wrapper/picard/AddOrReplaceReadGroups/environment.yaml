@@ -1,0 +1,9 @@
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - snakemake
+  - picard >=2.20.1,!=2.26.5
+  - samtools

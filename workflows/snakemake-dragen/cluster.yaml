@@ -1,0 +1,4 @@
+__default__:
+  nodes: 1
+  partition: all
+  time: 600

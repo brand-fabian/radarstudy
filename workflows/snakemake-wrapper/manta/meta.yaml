@@ -1,0 +1,14 @@
+name: manta
+description: Manta calls structural variants (SVs) and indels from mapped paired-end sequencing reads.
+input:
+  - bam file
+  - bai file
+output:
+  - diploidSV.vcf.gz
+  - candidateSV.vcf.gz
+  - candidateSmallIndels.vcf.gz
+notes: |
+  * We perform the germline analysis for manta structural variants
+  * Resource notes as per manta docs recommend 2GB/Core for memory, and as many cores as possible.
+authors:
+  - Fabian Brand

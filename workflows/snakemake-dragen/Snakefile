@@ -1,0 +1,33 @@
+include: 'rules/meta.smk'
+
+##
+# Always work in ephemeral for dragen execution
+#
+workdir: '/ephemeral/snakemake-dragen'
+
+##
+# Output files
+#
+rule all:
+    input:
+        # S3.remote(expand(config['s3']['output'] + '/output/{sample}/{sample}.hard-filtered.gvcf.gz', sample=samples['sample_id'])),
+        # S3.remote(expand(config['s3']['output'] + '/output/{family}/{family}.hard-filtered.vcf.gz', family=families)),
+        # S3.remote(expand(config['s3']['output'] + '/output/{sample}/{sample}.cnv.png', sample=samples['sample_id'])),
+        # S3.remote(expand(config['s3']['output'] + '/output/{family}/{family}.cnv.vcf.gz', family=families)),
+        # S3.remote(expand(config['s3']['output'] + '/output/{family}/{family}.sv.vcf.gz', family=families)),
+        expand('output/{sample}/{sample}.hard-filtered.gvcf.gz', sample=samples['sample_id']),
+        expand('output/{family}/{family}.hard-filtered.vcf.gz', family=families),
+        expand('output/{sample}/{sample}.cnv.png', sample=samples['sample_id']),
+        expand('output/{family}/{family}.cnv.vcf.gz', family=families),
+        expand('output/{family}/{family}.sv.vcf.gz', family=families),
+
+
+##
+# Snakemake rules
+#
+include: 'rules/fastq2gvcf.smk'
+include: 'rules/pedigree.smk'
+include: 'rules/joint_genotyping.smk'
+include: 'rules/cnv_calling.smk'
+include: 'rules/de_novo_cnv.smk'
+include: 'rules/sv_calling.smk'

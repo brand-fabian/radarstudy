@@ -1,0 +1,29 @@
+$schema: "http://json-schema.org/draft-06/schema#"
+
+description: snakemake configuration file
+
+type: object
+
+properties:
+  samples:
+    type: string
+  files:
+    type: string
+    description: Input file table.
+  license_file:
+    type: string
+  reference_dir:
+    type: string
+  s3:
+    description: Buckets for different use cases
+    type: object
+    properties:
+      reference:
+        type: string
+      input:
+        type: string
+      output:
+        type: string
+  self_normalize:
+    type: boolean
+    description: If true, apply self normalization algorithm instead of previous counting with panel of normals

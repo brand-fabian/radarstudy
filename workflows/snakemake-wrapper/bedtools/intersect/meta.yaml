@@ -1,0 +1,4 @@
+name: bedtools intersect
+description: Intersect sam/vcf/bed files.
+authors:
+  - Fabian Brand

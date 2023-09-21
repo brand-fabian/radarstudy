@@ -1,0 +1,13 @@
+name: subset_bam
+description: |
+  Prepare a bam input file for subsequent processing using whatshap. We
+  fix read groups in the resulting bam files and optionally combine
+  multiple bams from family members into a single one.
+authors:
+  - Fabian Brand
+input:
+  - A set of bam files and target RG:SM values
+  - A pedigree file (.fam)
+  - Some description of the family to sample
+output:
+  - A bam file with all family members and associated read groups.

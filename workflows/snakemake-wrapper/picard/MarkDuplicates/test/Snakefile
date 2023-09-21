@@ -1,0 +1,10 @@
+rule picard_mark_duplicates:
+    input:
+        bam="subset.bam",
+        bai="subset.bam.bai"
+    output:
+        bam="md.bam",
+        bai="md.bai",
+        md5="md.bam.md5",
+        metrics="md.metrics.txt"
+    wrapper: "file:.."

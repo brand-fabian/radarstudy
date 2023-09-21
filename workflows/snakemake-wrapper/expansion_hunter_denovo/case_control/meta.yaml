@@ -1,0 +1,11 @@
+name: ExpansionHunterDeNovo case control
+description: Illumina ExpansionHunter De Novo - Case Control analysis
+input:
+  - sample manifest
+  - multisample str profile
+output:
+  - Repeats with p-values inferred from the case control wilcoxon analysis
+notes:
+  - motif and locus based analysis can be run from this wrapper.
+authors:
+  - Fabian Brand

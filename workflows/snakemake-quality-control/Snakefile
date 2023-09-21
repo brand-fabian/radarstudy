@@ -1,0 +1,31 @@
+include: "rules/meta.smk"
+
+##
+# Target files
+
+rule all:
+    input:
+        expand(
+            "output/{project}/{project}.{ending}",
+            project=config["project"],
+            ending=[
+                "html",
+                # "aab.html",
+                # "var_het.html",
+                # "relatedness.html"
+            ]
+        )
+
+##
+# Snakemake rules
+include: "rules/cohort-vcf.smk"
+include: "rules/bcftools-stats.smk"
+include: "rules/fastqc.smk"
+include: "rules/mosdepth.smk"
+include: "rules/multiqc.smk"
+include: "rules/ngs-chew.smk"
+include: "rules/peddy.smk"
+include: "rules/samtools-stats.smk"
+include: "rules/verifybamid.smk"
+include: "rules/picard-metrics.smk"
+include: "rules/vcftools.smk"

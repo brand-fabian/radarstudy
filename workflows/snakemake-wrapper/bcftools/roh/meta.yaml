@@ -1,0 +1,4 @@
+name: bcftools roh
+description: The BCFtools/RoH command detects regions of autozygosity in sequencing data, including exome data, using a hidden Markov model.
+authors:
+  - Sugi Sivalingam

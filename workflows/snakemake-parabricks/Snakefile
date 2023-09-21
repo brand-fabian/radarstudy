@@ -1,0 +1,12 @@
+include: "rules/meta.smk"
+
+rule all:
+  input:
+    bam=expand("output/{sample}/{sample}.bam", sample=samples.index),
+    gvcf=expand("output/{sample}/{sample}.gvcf.gz", sample=samples.index),
+    wgs_metrics=expand("output/{sample}/{sample}.wgs_metrics.txt", sample=samples.index),
+    multiple_metrics=expand("output/{sample}/{sample}.alignment.txt", sample=samples.index),
+
+include: "rules/alignment.smk"
+include: "rules/haplotypecaller.smk"
+include: "rules/qc.smk"

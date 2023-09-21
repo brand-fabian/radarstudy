@@ -1,0 +1,9 @@
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - pandas >=0.24
+  - pysam >=0.15
+  - click >=7.0
+  - cython >=0.29

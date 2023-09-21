@@ -1,0 +1,4 @@
+name: svCalling
+description: Snakemake wrapper for the dragen sv calling pipeline.
+authors:
+  - Fabian Brand

@@ -1,0 +1,1 @@
+python3 read_phasing.py --verbose debug -O csv --output ./phasing.cru.csv $(find ../../output -name "*unfazed.vcf.gz")

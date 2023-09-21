@@ -1,0 +1,9 @@
+name: gatk GenotypeGVCFs
+description: Wrapper for gatk GenotypeGVCFs.
+authors:
+  - Fabian Brand
+input:
+  - a gvcf input file
+  - reference genome
+output:
+  - a vcf file

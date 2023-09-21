@@ -1,0 +1,4 @@
+name: deNovoCnvCalling
+description: Snakemake wrapper for the dragen de novo cnv calling pipeline.
+authors:
+  - Fabian Brand

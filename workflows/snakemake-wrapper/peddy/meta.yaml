@@ -1,0 +1,12 @@
+name: peddy
+description: peddy - qc tool to verify anncestry of samples.
+authors:
+  - Fabian Brand
+input:
+  - a cohort vcf input
+  - a cohort pedigree
+output:
+  - a html report [.html]
+  - several csv files [.het_check.csv,.ped_check.csv,.sex_check.csv]
+  - a (predicted) pedigree [.peddy.ped]
+  - a pca against 1kg data [.background_pca.json]

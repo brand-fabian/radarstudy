@@ -1,0 +1,4 @@
+name: bwa mem
+description: bwa mem wrapper that also performs sorting and indexing.
+authors:
+  - Fabian Brand

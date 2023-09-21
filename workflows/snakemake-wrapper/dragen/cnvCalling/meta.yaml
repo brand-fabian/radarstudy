@@ -1,0 +1,4 @@
+name: cnvCalling
+description: Snakemake wrapper for the dragen cnv calling pipeline.
+authors:
+  - Fabian Brand

@@ -1,0 +1,8 @@
+name: gatk CombineGVCFs
+description: Wrapper for gatk CombineGVCFs.
+authors:
+  - Fabian Brand
+input:
+  - any number of gvcf files
+output:
+  - a single gvcf file

@@ -1,0 +1,11 @@
+name: ngs-cli download
+description: Wrapper for downloading files from the ngs-cli platform.
+authors:
+  - Fabian Brand
+input:
+  - any file
+output:
+  - target file on local drive
+notes: |
+  * Downloads the given input file from the ngs-platform.
+  * Requires the sample parameter to find the correct file.

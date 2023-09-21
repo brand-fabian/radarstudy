@@ -1,0 +1,11 @@
+name: Graphtyper Genotype SV
+description: Snakemake wrapper for the graphtyper genotype structural variants tool.
+input:
+  - reference
+  - input vcf file of structural variants to genotype
+  - list of bam files
+  - (optional) regions to genotype
+output:
+  - vcf file
+authors:
+  - Fabian Brand

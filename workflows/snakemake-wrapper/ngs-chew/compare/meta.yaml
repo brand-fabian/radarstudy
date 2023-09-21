@@ -1,0 +1,12 @@
+name: ngs-chew compare
+description: Compare all given npz fingerprints.
+authors:
+  - Fabian Brand
+input:
+  - list of input files
+output:
+  - allelic balance plot
+  - variance of allelic balance box plot
+  - relatedness plot
+notes: |
+  * Consumes the given fingerprints to extract allelic balances

@@ -1,0 +1,9 @@
+name: ExpansionHunterDeNovo Profile
+description: Illumina ExpansionHunter De Novo - Profile step
+input:
+  - bam file
+  - genome reference
+output:
+  - STR profile for a single sample
+authors:
+  - Fabian Brand

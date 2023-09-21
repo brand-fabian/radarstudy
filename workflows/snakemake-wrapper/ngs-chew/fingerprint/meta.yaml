@@ -1,0 +1,11 @@
+name: ngs-chew fingerprint
+description: Fingerprinting vcf files with the help of ngs-chew.
+authors:
+  - Fabian Brand
+input:
+  - bam file
+output:
+  - vcf file
+  - npz (numpy) fingerprint file
+notes: |
+  * Fingerprints the given bam file for given variant loci.

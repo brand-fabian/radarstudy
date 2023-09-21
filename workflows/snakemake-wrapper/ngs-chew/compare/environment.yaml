@@ -1,0 +1,7 @@
+channels:
+  - https://ngshub.meb.uni-bonn.de/channel
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - ngs-chew >= 0.4.3

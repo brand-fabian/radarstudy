@@ -1,0 +1,9 @@
+name: picard AddOrReplaceReadGroups
+description: Wrapper for picards AddOrReplaceReadGroups.
+authors:
+  - Fabian Brand
+input:
+  - bam file
+  - bai file
+output:
+  - metrics file

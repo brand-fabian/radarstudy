@@ -1,0 +1,13 @@
+name: NVIDIA Parabricks haplotypecaller
+description: Wrapper haplotypecaller tool of the NVIDIA parabricks toolkit
+input:
+  - vcf
+output:
+  - vcf
+notes: |
+  * Make sure you have a license available for the software
+  * Depends on the module system of our installation to provide software deps.
+  * Input resources from GATK should be provided as dict with the necessary
+    attributes to build the command line for GATK.
+authors:
+  - Fabian Brand

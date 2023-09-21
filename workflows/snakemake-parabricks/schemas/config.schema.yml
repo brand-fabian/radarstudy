@@ -1,0 +1,35 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+description: snakemake configuration file reference
+
+type: object
+
+properties:
+  project:
+    type: string
+  sample-sheet:
+    type: string
+  files-table:
+    type: string
+  ref:
+    type: object
+    properties:
+      genome:
+        type: string
+      1kg-variants:
+        type: string
+      refseq:
+        type: string
+        description: Bed file containing refseq exon regions
+      known-variants:
+        type: array
+        items:
+          type: string
+    required:
+      - genome
+      - known-variants
+required:
+  - project
+  - sample-sheet
+  - files-table 
+  - ref

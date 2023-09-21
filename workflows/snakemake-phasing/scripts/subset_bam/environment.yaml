@@ -1,0 +1,12 @@
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - pysam
+  - pandas
+  - samtools
+  - requests
+  - pip
+  - pip:
+    - liftover

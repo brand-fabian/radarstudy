@@ -1,0 +1,4 @@
+name: fastq2vcf
+description: Snakemake wrapper for the dragen fastq to gvcf workflow.
+authors:
+  - Fabian Brand

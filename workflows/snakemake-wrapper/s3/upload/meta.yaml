@@ -1,0 +1,4 @@
+name: upload
+description: S3 wrapper to copy input files to the given remote.
+authors:
+  - Fabian Brand

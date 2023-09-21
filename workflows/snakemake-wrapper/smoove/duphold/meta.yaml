@@ -1,0 +1,11 @@
+name: smoove (lumpy) duphold
+description: duphold structural variant calling tool
+input:
+  - sv vcf.gz file.
+output:
+  - vcf file with all duphold annotations
+notes: |
+  * This wrapper relies on the xcat-specific module system (otherwise change environment.yaml)
+  * We call duphold through smoove to ensure compatibility with other tools
+authors:
+  - Fabian Brand

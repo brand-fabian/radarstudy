@@ -1,0 +1,10 @@
+name: Graphtyper Genotype
+description: Snakemake wrapper for the graphtyper genotype tool.
+input:
+  - reference
+  - list of bam files
+  - (optional) regions to process
+output:
+  - vcf file
+authors:
+  - Fabian Brand

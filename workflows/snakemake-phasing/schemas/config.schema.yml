@@ -1,0 +1,56 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+description: snakemake configuration file
+
+type: object
+
+properties:
+  project:
+    type: string
+  files:
+    type: string
+  cohort-vcf:
+    type: object
+    properties:
+      radar:
+        type: string
+      inova:
+        type: string
+      cru:
+        type: string
+  pedigree:
+    type: string
+  sites:
+    type: string
+  search-dirs:
+    type: array
+    items:
+      type: string
+  ref:
+    type: object
+    properties:
+      grch37:
+        genome:
+          type: string
+      grch38:
+        genome:
+          type: string
+    required:
+      - grch37
+      - grch38
+  id-mapping:
+    type: object
+    properties:
+      radar:
+        type: string
+      inova:
+        type: string
+  flanking-region:
+    type: integer
+required:
+  - project
+  - pedigree
+  - ref
+  - search-dirs
+  - sites
+  - cohort-vcf

@@ -1,0 +1,9 @@
+name: parabricks bammetrics
+description: Parabricks accelerated version of picard CollectWgsMetrics
+authors:
+  - Fabian Brand
+input:
+  - bam file
+  - bai file
+output:
+  - metrics file

@@ -1,0 +1,6 @@
+[submodule "wrapper"]
+	path = wrapper
+	url = https://git.meb.uni-bonn.de/exome-analysis/snakemake-wrapper.git
+[submodule "scripts/subset_bam/pybwa"]
+	path = scripts/subset_bam/pybwa
+	url = https://git.meb.uni-bonn.de/brand/pybwa

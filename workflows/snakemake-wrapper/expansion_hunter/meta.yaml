@@ -1,0 +1,10 @@
+name: ExpansionHunter
+description: Illumina ExpansionHunter - Tandem repeat size estimation tool
+input:
+  - bam file
+output:
+  - VCF file containing genotyped STR's
+notes:
+  - The STR catalogs are downloaded by the job that is launched unless explicitly disabled.
+authors:
+  - Fabian Brand

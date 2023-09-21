@@ -1,0 +1,13 @@
+rule picard_collect_hs_metrics:
+    input:
+        bam="subset.bam",
+        bai="subset.bam.bai",
+        target_intervals="region.interval_list",
+        bait_intervals="region.interval_list",
+        ref="reference.fasta"
+    output:
+        metrics="metrics.txt"
+    params:
+        extra="",
+        jvm_args=""
+    wrapper: "file:.."

@@ -1,0 +1,8 @@
+name: picard MergeVcfs
+description: Wrapper for picards merge vcfs.
+authors:
+  - Fabian Brand
+input:
+  - list of gvcf files
+output:
+  - a single gvcf file

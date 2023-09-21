@@ -1,0 +1,17 @@
+name: mosdepth
+description: Compute wgs statistics using mosdepth (https://academic.oup.com/bioinformatics/article/34/5/867/4583630)
+input:
+  - bam file
+  - bai file
+output:
+  - mosdepth.dist.txt
+  - mosdepth.summary.txt
+  - per-abse.bed.gz (unless --no-per-base is specified)
+  - regions.bed.gz (if --by is specified)
+  - quantized.bed.gz (if --quantize is specified)
+  - thresholds.bed.gz (if --thresholds is specified)
+notes: |
+  * Generates all outputs requested by command line
+  * Only exposes outputs if the desired key is present in output
+authors:
+  - Fabian Brand

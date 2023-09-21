@@ -1,0 +1,4 @@
+name: panelOfNormals
+description: Snakemake wrapper for the dragen panel of normals creation from bam.
+authors:
+  - Fabian Brand

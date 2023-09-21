@@ -1,0 +1,31 @@
+$schema: "http://json-schema.org/draft-06/schema#"
+
+description: Sample sheet entry
+
+properties:
+  family_id:
+    type: string
+  sample_id:
+    type: string
+  father_id:
+    type: string
+  mother_id:
+    type: string
+  sex:
+    type: string
+    enum: [ 'M', 'F', '.' ]
+  is_affected:
+    type: integer
+    enum: [ 0, 1, 2 ]
+  remote:
+    type: string
+    enum: [ 's3', 'ngs-cli', '.' ]
+  fastq1:
+    type: string
+  fastq2:
+    type: string
+
+required:
+  - family_id
+  - sample_id
+  

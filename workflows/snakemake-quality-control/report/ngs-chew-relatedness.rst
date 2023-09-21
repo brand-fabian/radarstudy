@@ -1,0 +1,1 @@
+Relatedness matrix based on SNP loci detected, called and plotted by ngs-chew based on a digest of the WGS data.

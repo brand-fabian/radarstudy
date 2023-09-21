@@ -1,0 +1,15 @@
+project: LKG
+input-dirs:
+  - /home/brand/data/igsb-fs/brand/lkg
+search-patterns:
+  - "*fastq.gz"
+  - "*bam"
+  - "*hard-filtered.vcf.gz"
+  - "*.csv"
+ref:
+  genome: /home/brand/Projects/snakemake/snakemake-pipeline/library/human_g1k_v37_decoy.fasta
+  refseq: /daten/cuba/Resources/Genomes/Human/GATK/b37/all_refseq_exons_ip_12.bed
+  1kg-variants: /home/brand/data/1000G_phase3_v4_20130502_chr22.sites.vcf.gz
+mosdepth:
+  thresholds: "10,20,30,40,50"
+dragen_qc: true

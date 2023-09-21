@@ -1,0 +1,11 @@
+name: ExpansionHunterDeNovo outlier
+description: Illumina ExpansionHunter De Novo - outlier analysis
+input:
+  - sample manifest
+  - multisample str profile
+output:
+  - Repeats inferred from the outlier analysis
+notes:
+  - motif and locus based analysis can be run from this wrapper.
+authors:
+  - Fabian Brand
