@@ -1,19 +1,34 @@
 #! /bin/bash
 
-PYTHON="/home/brand/scratch/conda/envs/xcat_spark/bin/python3"
-REFERENCE="$(realpath ~/scratch/library/human_g1k_v37_decoy.fasta)"
-RADAR_META="$(realpath /home/brand/Projects/msdns_inova/data/radarstudy_data.csv)"
-INOVA_META="$(realpath /home/brand/Projects/msdns_inova/data/Bonn-Subset-08-18-20.xlsx)"
-CRU_META="$(realpath /home/brand/Projects/radarstudy/msdn_call/data/TRIO-CRU.md.csv)"
-PILOT_META="$(realpath /home/brand/Projects/radarstudy/msdn_call/data/pilot.ped)"
-PHASING="/ceph01/homedirs/brand/Projects/radarstudy/phasing/scripts/read_phasing/phasing.cru.pickle"
-GRAPHTYPER_TABLES=("/ceph01/homedirs/brand/Projects/radarstudy/graphtyper/output/radar-vcf/radar-vcf.pickle" "/ceph01/homedirs/brand/Projects/radarstudy/graphtyper/output/inova/inova.pickle" "/ceph01/homedirs/brand/Projects/radarstudy/graphtyper/output/trio-cru/trio-cru.pickle")
+#############
+# Variables #
+#############
+# These variables are the main settings that are mostly fixed between
+# runs of the statistical analysis pipelines. Please set them according
+# to your local environment.
+PYTHON="<PYTHON INTERPRETER PATH>"
+REFERENCE="<GENOME REFERENCE .fasta PATH>"
+# Metadata Files for the different cohorts
+RADAR_META="<RADARSTUDY METADATA .csv>"
+INOVA_META="<INOVA METADATA .xlsx"
+CRU_META="<CRU METADATA .csv>"
+PILOT_META="<PILOT METADATA .csv>"
+# If phasing is to be incorporated into the analysis, set the path to
+# the output table of the phasing workflow.
+PHASING="<PHASING TABLE>"
 
-DNM_PY="/ceph01/homedirs/brand/Projects/radarstudy/msdn_call/scripts/plot/dnm.py"
-MSDN_PY="/ceph01/homedirs/brand/Projects/radarstudy/msdn_call/scripts/plot/msdn.py"
-PPV_PY="/ceph01/homedirs/brand/Projects/radarstudy/msdn_call/scripts/plot/ppv.py"
-PHASING_PY="/ceph01/homedirs/brand/Projects/radarstudy/msdn_call/scripts/plot/phasing.py"
+# Paths to the analysis scripts in this folder, change these if you
+# changed the directory layout
+DNM_PY="$(realpath $PWD/dnm.py)"
+MSDN_PY="$(realpath $PWD/msdn.py)"
+PPV_PY="$(realpath $PWD/ppv.py)"
+PHASING_PY="$(realpath $PWD/phasing.py)"
 
+#############
+# Arguments #
+#############
+# Use these arguments to change each script execution for the analysis
+# that you want to execute through the CLI.
 function usage {
   echo -e "$0\n"
   echo -e "Shortcut to execute the radar scripts in this folder on some input data.\n"
@@ -25,11 +40,10 @@ function usage {
   echo -e "\t--apply-control-matching\tSet the apply control matching flag for plotting if this is set"
   echo -e "\t--language\t\t\tSet the language for plot descriptions (choices: de, en)"
   echo -e "\t--isolated\t\t\tCompute isolated de-novo mutations"
-  echo -e "\t--graphtyper\t\t\tInclude graphtyper tables from validation experiments"
   echo -e "\t--include-pilot\t\t\tInclude the pilot cohort in all analysis runs"
 }
 
-options=$(getopt -o hi:o:f:n:p: --long "input-prefix: help isolated metadata: output-dir: factor: apply-control-matching language: num-simulations: ppv: graphtyper include-pilot" -- "$@")
+options=$(getopt -o hi:o:f:n:p: --long "input-prefix: help isolated metadata: output-dir: factor: apply-control-matching language: num-simulations: ppv: include-pilot" -- "$@")
 [ $? -eq 0 ] || {
   usage
   echo -e "\nInvalid options provided"
@@ -46,7 +60,6 @@ LANGUAGE="--language de"
 PPV=""
 NUM_SIMULATIONS="--num-simulations 1000"
 ISOLATED=""
-GRAPHTYPER=""
 INCLUDE_PILOT=""
 METADATA_SET=""
 
@@ -91,9 +104,6 @@ while true; do
     --isolated)
       ISOLATED="--isolated --msdn-ht ${INPUT_DIR}.msdns.ht"
       ;;
-    --graphtyper)
-      GRAPHTYPER="--graphtyper $(echo "${GRAPHTYPER_TABLES[@]}" | sed 's/ / --graphtyper /g') --apply-graphtyper-filter"
-      ;;
     --include-pilot)
       INCLUDE_PILOT="1"
       ;;
@@ -109,18 +119,24 @@ while true; do
   shift
 done
 
+###############
+# Main Script #
+###############
 if [ -z "$METADATA_SET" -a -n "$INCLUDE_PILOT" ]; then
   METADATA="$METADATA $PILOT_METADATA"
 fi
 
+# The cache directory environment is used by all scripts for their
+# output, since this directory has to be known when the pyhton files
+# are first interpreted.
 export CACHE_DIR="${OUTPUT_DIR}"
 
 $PYTHON $DNM_PY --verbose info -R "$REFERENCE" \
-  $METADATA $APPLY_CONTROL_MATCHING $FACTOR $LANGUAGE $ISOLATED $GRAPHTYPER \
+  $METADATA $APPLY_CONTROL_MATCHING $FACTOR $LANGUAGE $ISOLATED \
   "${INPUT_DIR}.refined_dnm.mt"
 
 $PYTHON $MSDN_PY --verbose info -R "$REFERENCE" \
-  $METADATA $APPLY_CONTROL_MATCHING $FACTOR $LANGUAGE $GRAPHTYPER \
+  $METADATA $APPLY_CONTROL_MATCHING $FACTOR $LANGUAGE \
   "${INPUT_DIR}.msdns.ht"
 
 $PYTHON $PPV_PY --verbose info -R "$REFERENCE" \
@@ -129,5 +145,5 @@ $PYTHON $PPV_PY --verbose info -R "$REFERENCE" \
   "${INPUT_DIR}.msdns.ht"
 
 $PYTHON $PHASING_PY --verbose info -R "$REFERENCE" \
-  $METADATA $APPLY_CONTROL_MATCHING $FACTOR $LANGUAGE $GRAPHTYPER \
+  $METADATA $APPLY_CONTROL_MATCHING $FACTOR $LANGUAGE \
   -p "$PHASING" "${INPUT_DIR}.refined_dnm.mt" "${INPUT_DIR}.msdns.ht"

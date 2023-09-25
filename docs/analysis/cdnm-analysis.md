@@ -1,13 +1,13 @@
 # cDNM Analysis
 Description of the main statistical analysis pipeline for the radarstudy.
 
-For the detection of variants, see: [[Radarstudie/cDNM Detection]]
+For the detection of variants, see: [cDNM Detection](./cdnm-detection.md)
 
 The analysis is run with four main python scripts:
-* [[cDNM Analysis#DNM Analysis]] dnm.py
-* [[cDNM Analysis#cDNM Analysis]] msdn.py
-* [[cDNM Analysis#Positive Predictive Value]] ppv.py
-* [[cDNM Analysis#Phasing]] phasing.py
+* [cDNM Analysis > DNM Analysis](./cdnm-analysis.md#dnm-analysis) dnm.py
+* [cDNM Analysis > cDNM Analysis](./cdnm-analysis.md#cdnm-analysis) msdn.py
+* [cDNM Analysis > Positive Predictive Value](./cdnm-analysis.md#positive-predictive-value) ppv.py
+* [cDNM Analysis > Phasing](./cdnm-analysis.md#phasing) phasing.py
 ## Analysis
 The following steps are run through the main analysis pipeline scripts. All of those are setup, s.t. the data can be generated on one run, and reused on the next run through the rudimentary `NamedCheckpoint` class. Currently, each analysis _should ideally_ be implemented through the `AnalysisFactory` abstract class and its `AnalysisFactory.get` function. However, many are still present as simple function in all the different scripts. The statistics are computed, retrieved and saved by using the `StatisticsFactory.register` decorator. Each function should be annotated with a `@NamedCheckpoint.checkpoint()` and, if it outputs something where a statistical comparison should be made (i.e. t-test, Mann-Whitney-U-Test), a second annotation `@StatisticsFactory.register` should be made.
 
@@ -55,7 +55,7 @@ Each loader performs similar steps, namely reading in the `hail` (matrix) table 
 The analysis script have very similar command line options. Aside from required arguments that are needed to perform the processing task of each given script, most option are concerned with metadata loading and how matching is performed. Common Options include those related to loading the metadata, which can be done either by specifying the original tables (`--[radar,inova,cru,pilot]-meta`) or by specifying the processed metadata from an earlier run (`--metadata`). Additionally, some attributes of the DNM and cDNM loaders can be changed by setting the `--isolated` (only count DNMs if they are not part of a cluster), `--[no]-apply-graphtyper-filter` (filter DNM set to a set of validated ones) or `--[no]-control-matching` (behaviour of the age matching, if enabled case and controls are paired for all tests) flags. The common `--language` option allows changing the output language of all plots produced by the scripts.
 
 ## DNM Analysis
-The DNM analysis script will filter DNM's to remove potentiala sequencing artifacts and exclude some samples based on QC parameters (see [[cDNM Analysis#Data Loading]]). Afterwards, this script computes the (isolated) DNM rates for all samples in all cohorts and compares them using GLM's and the `StatisticsFactory` methods. The program also computes the paternal age effect, by fitting the model `iDNMs ~ cohort + father_age + (cohort * father_age)` to the input data.
+The DNM analysis script will filter DNM's to remove potentiala sequencing artifacts and exclude some samples based on QC parameters (see [cDNM Analysis > Data Loading](./cdnm-analysis.md#data-loading)). Afterwards, this script computes the (isolated) DNM rates for all samples in all cohorts and compares them using GLM's and the `StatisticsFactory` methods. The program also computes the paternal age effect, by fitting the model `iDNMs ~ cohort + father_age + (cohort * father_age)` to the input data.
 
 Note that isolated DNMs are only considered if the flag `--isolated` is passed, otherwise all variants that are part of clusters are also included here and therefore counted twice in the statistics.
 ```bash

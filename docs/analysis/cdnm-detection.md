@@ -11,7 +11,7 @@ To run this script, you will need the hail binaries, and Apache Spark and its as
 
 The python environment additionally must have the `pandas` and `numpy` libraries installed to be able to run the script successfully.
 ## Usage
-To run this in a valid environment (see  [[cDNM Detection#Prerequisites]]), the following options can be used. The options `-f` (a pedigree file), `-R` (.fasta reference) and any number of named VCF files are required.
+To run this in a valid environment (see [Prerequisites](./cdnm-detection.md#prerequisites)), the following options can be used. The options `-f` (a pedigree file), `-R` (.fasta reference) and any number of named VCF files are required.
 
 ```bash
 usage: FIND-MSDNS [-h] [-p OUTPUT] -f FAM -R REFERENCE [--max-ac MAX_AC]
